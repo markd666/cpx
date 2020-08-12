@@ -1,6 +1,10 @@
 # We specify the base image we need for our
 # go application - Alpine image didn't have git or gcc. 
-FROM golang:1.14
+FROM golang:1.14-alpine
+
+RUN set -ex; \
+    apk update; \
+    apk add --no-cache git make build-base
 
 # We create an /app directory within our
 # image that will hold our application source
