@@ -4,5 +4,4 @@ services:
   - docker
 
 before_install:
-  - ./.travis.gofmt.sh
   - docker build -t cpx .
