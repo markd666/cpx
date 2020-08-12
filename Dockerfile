@@ -20,4 +20,4 @@ WORKDIR /cpx
 # Add this go mod download command to pull in any dependencies
 RUN go mod download
 # Run the CPX tests in a docker environment
-RUN go test -v
+RUN go test -v .
