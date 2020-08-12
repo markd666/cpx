@@ -20,5 +20,4 @@ WORKDIR /cpx
 # Add this go mod download command to pull in any dependencies
 RUN go mod download
 # Run the CPX tests in a docker environment
-RUN travis.gofmt.sh
 RUN go test -v .
