@@ -1,10 +1,8 @@
 language: golang
 
-script:
-    - ./.travis.gofmt.sh
-
 services:
   - docker
 
 before_install:
-  - docker build -t cp'x .
+  - ./.travis.gofmt.sh
+  - docker build -t cpx .
