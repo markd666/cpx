@@ -5,6 +5,9 @@
 *.so
 *.dylib
 examples/*.exe
+examples/testlogfile
+examples/guide.htm
+scripts/testlogfile
 
 # Test binary, built with `go test -c`
 *.test
