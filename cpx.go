@@ -77,13 +77,14 @@ func (data *lxiDeviceData) GetVoltage() (float64, error) {
 	voltageString, err := data.device.Query("v1O?")
 	if err != nil {
 		return 0, err
-	} else {
-		// remove suffix and convert string to float64
-		var voltage = strings.TrimSpace(voltageString)
-		voltageTrimmedString := strings.TrimSuffix(voltage, "V")
-		voltageFloat, _ := strconv.ParseFloat(voltageTrimmedString, 64)
-		return voltageFloat, nil
 	}
+
+	// remove suffix and convert string to float64
+	var voltage = strings.TrimSpace(voltageString)
+	voltageTrimmedString := strings.TrimSuffix(voltage, "V")
+	voltageFloat, _ := strconv.ParseFloat(voltageTrimmedString, 64)
+	return voltageFloat, nil
+
 }
 
 //GetVoltage Returns the voltage of the power supply as an int
@@ -91,11 +92,11 @@ func (data *lxiDeviceData) GetCurrent() (float64, error) {
 	currentString, err := data.device.Query("i1O?")
 	if err != nil {
 		return 0, err
-	} else {
-		// remove suffix and convert string to float64
-		var current = strings.TrimSpace(currentString)
-		currentTrimmedString := strings.TrimSuffix(current, "I")
-		currentFloat, _ := strconv.ParseFloat(currentTrimmedString, 64)
-		return currentFloat, nil
 	}
+
+	// remove suffix and convert string to float64
+	var current = strings.TrimSpace(currentString)
+	currentTrimmedString := strings.TrimSuffix(current, "I")
+	currentFloat, _ := strconv.ParseFloat(currentTrimmedString, 64)
+	return currentFloat, nil
 }
