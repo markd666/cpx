@@ -9,7 +9,7 @@ import (
 	"github.com/gotmc/lxi"
 )
 
-const defaultIp = "192.168.0.102"
+const defaultIP = "192.168.0.102"
 
 // lxiDeviceData structure to hold package data
 type lxiDeviceData struct {
@@ -27,6 +27,12 @@ type PowerSupplyInterface interface {
 	GetVoltage() (float64, error)
 	GetCurrent() (float64, error)
 	Close()
+}
+
+//mappings for the each command words that the bench power supply accepts
+var commandInstructionWords = map[string]string{
+	"voltage": "v1O?",
+	"current": "i1O?",
 }
 
 // BenchPowerSupply constructor (optional)
@@ -74,7 +80,7 @@ func (data *lxiDeviceData) Query(telemetryType string) string {
 
 //GetVoltage Returns the voltage of the power supply as an int
 func (data *lxiDeviceData) GetVoltage() (float64, error) {
-	voltageString, err := data.device.Query("v1O?")
+	voltageString, err := data.device.Query(commandInstructionWords["voltage"])
 	if err != nil {
 		return 0, err
 	}
@@ -89,7 +95,7 @@ func (data *lxiDeviceData) GetVoltage() (float64, error) {
 
 //GetVoltage Returns the voltage of the power supply as an int
 func (data *lxiDeviceData) GetCurrent() (float64, error) {
-	currentString, err := data.device.Query("i1O?")
+	currentString, err := data.device.Query(commandInstructionWords["current"])
 	if err != nil {
 		return 0, err
 	}
