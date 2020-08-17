@@ -21,3 +21,4 @@ WORKDIR /cpx
 RUN go mod download
 # Run the CPX tests in a docker environment
 RUN go test -v .
+

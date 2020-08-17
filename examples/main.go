@@ -23,8 +23,9 @@ func main() {
 	log.SetOutput(f)
 
 	for {
-		log.Println(t.GetVoltage())
-		log.Println(t.GetCurrent())
+		voltage, _ := t.GetVoltage()
+		current, _ := t.GetCurrent()
+		log.Printf("%v %v", voltage, current)
 
 		time.Sleep(100 * time.Millisecond)
 	}
