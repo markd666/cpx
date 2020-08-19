@@ -2,6 +2,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/markd666/cpx)](https://goreportcard.com/report/github.com/markd666/cpx)
 [![GoDoc](https://godoc.org/github.com/markd666/cpx?status.svg)](https://godoc.org/github.com/markd666/cpx)
 [![Build Status](https://travis-ci.org/markd666/cpx.svg?branch=master)](https://travis-ci.org/markd666/cpx)
+[![License Badge][license badge]][LICENSE]
 
 Go interface to the CPX Series Bench Power Supplies by [AIM TTi](https://www.aimtti.com/product-category/dc-power-supplies/aim-cpxseries) 
 
@@ -59,3 +60,7 @@ pip install pandas matplotlib
 
 * This code has only been tested on the CPX400SP series bench power supply.
 * Only basic functionality is currently included in teh library. Sofar only gathering 
+
+
+[LICENSE]: https://github.com/markd666/cpx/blob/master/LICENSE
+[license badge]: https://img.shields.io/badge/license-MIT-blue
